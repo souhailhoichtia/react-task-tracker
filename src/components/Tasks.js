@@ -1,24 +1,4 @@
-const tasks = [
-  {
-    id: 1,
-    text: "doctors appointent",
-    day: "Feb 5th at 2:30pm",
-    reminder: true,
-  },
-  {
-    id: 2,
-    text: "meeting at school",
-    day: "Feb 5th at 1:30pm",
-    reminder: true,
-  },
-  {
-    id: 3,
-    text: "food shopping",
-    day: "Feb 5th at 2:30pm",
-    reminder: false,
-  },
-];
-function Tasks() {
+function Tasks({ tasks }) {
   return (
     <>
       {tasks.map((task) => (
