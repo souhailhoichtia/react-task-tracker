@@ -1,13 +1,19 @@
+import Button from "./Button";
+
 const Header = (props) => {
+  const onClick = () => {
+    console.log("clicked");
+  };
   return (
-    <header>
+    <header className="header">
       <h1>{props.title}</h1>
+      <Button text="Add" color="gren" onClick={onClick} />
     </header>
   );
 };
 
 Header.defaultProps = {
-  title: "hghhggh",
+  title: "enter title plz",
 };
 
 export default Header;
