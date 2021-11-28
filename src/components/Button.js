@@ -2,7 +2,11 @@ import React from "react";
 
 function Button(props) {
   return (
-    <button onClick={props.onClick} className="btn">
+    <button
+      style={{ backgroundColor: props.color }}
+      onClick={props.onClick}
+      className="btn"
+    >
       {props.text}
     </button>
   );
