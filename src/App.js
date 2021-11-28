@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import { useState } from "react";
+import Task from "./components/Task";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -23,11 +24,19 @@ function App() {
       reminder: false,
     },
   ]);
-
+  // delete task
+  const deleteTask = (id) => {
+    //console.log("delete", id);
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
   return (
     <div className="container">
       <Header title="Task Tracker"></Header>
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        "no tasks to show"
+      )}
     </div>
   );
 }
